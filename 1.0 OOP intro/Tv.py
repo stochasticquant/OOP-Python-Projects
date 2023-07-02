@@ -78,20 +78,3 @@ class TV():
                 print(f'  Volume is : {self.volume}')
         else:
             print('  TV is  : Off')
-
-
-
-def main():
-    oTV = TV('Sony', 'Living Room')
-
-    oTV.power()
-    oTV.showTVInfo()
-
-    oTV.setChannel(500)
-    oTV.power()
-    oTV.showTVInfo()
-
-    
-if __name__ == "__main__":
-    main()
-    
