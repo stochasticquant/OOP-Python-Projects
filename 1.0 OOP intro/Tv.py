@@ -16,11 +16,11 @@ class TV():
         self.VOLUME_MIN = 0
         self.volume = self.VOLUME_MAX
 
-    def power(self):
+    def power(self) -> None:
         # TV on and off button
         self.isOn = not self.isOn
 
-    def volumeUp(self):
+    def volumeUp(self) -> None:
         
         if not self.isOn:
             return
@@ -30,7 +30,7 @@ class TV():
         if self.volume < self.VOLUME_MAX:
             self.volume = self.volume + 1
 
-    def volumeDown(self):
+    def volumeDown(self) -> None:
         if not self.isOn:
             return
         if self.isMuted:
@@ -39,7 +39,7 @@ class TV():
         if self.volume < self.VOLUME_MAX:
             self.volume = self.volume - 1
 
-    def channelUp(self):
+    def channelUp(self) -> None:
         if not self.isOn:
            return
         self.channelIndex = self.channelIndex + 1
@@ -47,7 +47,7 @@ class TV():
             # Go to the beginning channel if at the end
             self.tvchannelList = 0
 
-    def channelDown(self):
+    def channelDown(self) -> None:
         if not self.isOn:
            return
         self.channelIndex = self.channelIndex - 1
@@ -55,19 +55,19 @@ class TV():
             # Go to the end channel if at the beginning
             self.tvchannelList = self.nChannels - 1
 
-    def mute(self):
+    def mute(self) -> None:
         if not self.isOn:
             return
         self.isMuted = not self.isMuted
 
-    def setChannel(self, newChannel):
+    def setChannel(self, newChannel: int) -> None:
         if newChannel in self.tvchannelList:
             self.channelIndex = self.tvchannelList.index(newChannel)
         else:
             print(f'{newChannel} : Channel not offered')
 
-    def showTVInfo(self):
-        print()
+    def showTVInfo(self) -> None:
+        print() 
         print('TV Status:')
         if self.isOn:
             print('  TV is : On')
@@ -80,9 +80,9 @@ class TV():
             print('  TV is  : Off')
 
 
-    
-if __name__ == "__main__":
-    oTV = TV()
+
+def main():
+    oTV = TV('Sony', 'Living Room')
 
     oTV.power()
     oTV.showTVInfo()
@@ -90,3 +90,8 @@ if __name__ == "__main__":
     oTV.setChannel(500)
     oTV.power()
     oTV.showTVInfo()
+
+    
+if __name__ == "__main__":
+    main()
+    
