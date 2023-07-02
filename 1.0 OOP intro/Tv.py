@@ -4,7 +4,7 @@
 class TV():
     def __init__(self, brand, location) -> None:
         self.brand = brand
-        self.location = loaction
+        self.location = location
         self.isOn = False
         self.isMuted = False
 
