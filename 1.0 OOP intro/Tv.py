@@ -2,7 +2,9 @@
 ### Introduction OOP using TV object modeling
 
 class TV():
-    def __init__(self) -> None:
+    def __init__(self, brand, location) -> None:
+        self.brand = brand
+        self.location = loaction
         self.isOn = False
         self.isMuted = False
 
